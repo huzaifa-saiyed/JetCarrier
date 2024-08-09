@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="jet_carrier_prices" resource="default" engine="innodb" comment="Jet Carrier Prices">
+        <column xsi:type="int" name="entity_id" nullable="false" identity="true" unsigned="true" comment="Entity ID"/>
+        <column xsi:type="varchar" name="zipcode" nullable="false" length="255" comment="Zip Code"/>
+        <column xsi:type="float" name="svx" nullable="true" comment="SVX Price"/>
+        <column xsi:type="float" name="stx" nullable="true" comment="STX Price"/>
+        <column xsi:type="float" name="ltx" nullable="true" comment="LTX Price"/>
+        <column xsi:type="float" name="ftl" nullable="true" comment="FTL Price"/>
+        <column xsi:type="timestamp" name="create_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Create Date"/>
+        <column xsi:type="timestamp" name="update_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Update Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+</schema>

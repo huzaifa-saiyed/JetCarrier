@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">jetcarrier_form.jetcarrier_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">JetCarrier Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+         <buttons>
+            <button name="save" class="Kitchen365\JetCarrier\Block\Adminhtml\Form\Edit\SaveButton"/>
+            <button name="back" class="Kitchen365\JetCarrier\Block\Adminhtml\Form\Edit\BackButton"/>
+        </buttons>
+        <namespace>jetcarrier_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>jetcarrier_form.jetcarrier_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="jetcarrier_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="jetcarrier/form/saveform"/>
+        </settings>
+        <dataProvider class="Kitchen365\JetCarrier\Model\Form\DataProvider" name="jetcarrier_form_data_source">
+            <settings>
+                <requestFieldName>entity_id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="zipcode" sortOrder="10" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">zipcode</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-digits" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">ZipCode</label>
+                <dataScope>zipcode</dataScope>
+            </settings>
+        </field>
+        <field name="svx" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">svx</item>
+                </item>
+            </argument>
+            <settings>
+                    <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <dataScope>svx</dataScope>
+                <label translate="true">SVX (1-200 lbs)</label>
+            </settings>
+        </field>
+        <field name="stx" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">stx</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <dataScope>stx</dataScope>
+                <label translate="true">STX (1-4 pallets)</label>
+            </settings>
+        </field>
+        <field name="ltx" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">ltx</item>
+                </item>
+            </argument>
+            <settings>
+                    <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <dataScope>ltx</dataScope>
+                <label translate="true">LTX (5-9 pallets)</label>
+            </settings>
+        </field>
+        <field name="ftl" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">ftl</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <dataScope>ftl</dataScope>
+                <label translate="true">FTL (10-12 pallets)</label>
+            </settings>
+        </field>
+    </fieldset>
+</form>
