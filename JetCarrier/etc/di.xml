@@ -7,10 +7,10 @@
             </argument>
         </arguments>
     </type>
-    <virtualType name="Kitchen365\JetCarrier\Model\ResourceModel\JetCarrier\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <type name="Kitchen365\JetCarrier\Model\ResourceModel\JetCarrier\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">jet_carrier_prices</argument>
             <argument name="resourceModel" xsi:type="string">Kitchen365\JetCarrier\Model\ResourceModel\JetCarrier</argument>
         </arguments>
-    </virtualType>
+    </type>
 </config>
